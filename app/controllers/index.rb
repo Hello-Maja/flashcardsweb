@@ -52,6 +52,9 @@ post "/cardloop/:id" do
   else
     Guess.create(round_id: @round.id, card_id: @card.id, correct: false)
   end
+    
+    
+
   redirect '/card'  
   
 end  
