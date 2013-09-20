@@ -59,7 +59,7 @@ post "/cardloop/:id" do
   
 end  
   
-end  
+
 
 post "/round/card/:id" do
   @user= User.find(session[:id])
@@ -77,15 +77,17 @@ post "/round/card/:id" do
 end
 
 post '/login' do
+  
+  @user=User.find_by_email(params[:user][:email])
+  p @user.password
+  p params[:user][:password]
 
-  @user=User.find(params[:user][:name])
-  if @user
-    @user.authenticate(params[:user][:name],params[:user],[:password])
-    session[:id]=@user.id
-    redirect "/profile/#{session[:id]}"
-  else
-    redirect "/"  
-  end  
+    if @user.password == params[:user][:password]
+      session[:id]=@user.id
+      redirect "/profile/#{session[:id]}"
+    else
+      redirect "/"  
+    end  
 
 end  
 
