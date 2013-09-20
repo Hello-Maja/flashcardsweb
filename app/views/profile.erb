@@ -1,0 +1,24 @@
+<div class="container">
+  <h1>Welcome<%=@user.name %>!</h1>
+<ul>
+  <% @decks.each do |d|%>
+  <li><a href="/deck/#{d.id}"<%= d.name%>></a></li>
+   <%end%>
+</ul>  
+
+
+
+
+  <table>
+    <th>Date</th>
+    <th>Deck</th>
+    <th>Score</th>
+    <%@rounds.each do |r|%>
+    <tr>
+      <td><%=r.created_at%></td>
+      <td><%=r.deck_id%></td>
+      <td><%=((r.num_correct).to_f/(r.num_cards).to_f)*(100.0)%></td>
+    </tr>  
+    <%end%>
+  </table>  
+</div>  
