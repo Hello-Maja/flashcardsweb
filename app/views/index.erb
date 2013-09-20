@@ -1,14 +1,14 @@
 <div class="container">
   <h1>Welcome to Flashcards!</h1>
   <h2>Login</h2>
-<form id="login" action="\login">
-  <label>Username<input type="text" id="name" name="user[name]"></label>
+<form id="login" action="\login" method="POST">
+  <label>Username<input type="text" id="name" name="user[email]"></label>
   <label>Password<input type="password" id="password" name="user[password]"></label>
   <input type="submit" value="submit">
 </form>
 
 <h2>Sign Up</h2>
-<form id="signup" action="\signup">
+<form id="signup" action="\signup" method="POST">
   <label>Email<input type="text" id="email" name="user[email]"></label><br>
   <label>Name<input type="text" id="name" name="user[name]"></label><br>
   <label>Password<input type="text" id="password" name="user[password]"></label>
