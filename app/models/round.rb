@@ -23,6 +23,10 @@ class Round < ActiveRecord::Base
     self.deck_order = shuf.join(',')
   end
 
+  def deck_array
+    self.deck_order.split(',')
+  end
+
   def finish
     self.guesses.each do |guess|
       if guess.correct == true
