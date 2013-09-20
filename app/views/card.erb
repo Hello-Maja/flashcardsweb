@@ -1,0 +1,11 @@
+<div class="container">
+  <h1><%= @card.question%></h1> 
+
+  <br>
+  <form id="answer" action="/round/card/#{@card.id}">
+     <label>Answer<input type="text" id="guess" name="guess"></label><br>
+     <input type="submit" value="answer">
+  </form>
+  <br>
+
+</div>  
