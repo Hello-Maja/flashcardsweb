@@ -2,7 +2,7 @@
   <h1>Welcome<%=@user.name %>!</h1>
 <ul>
   <% @decks.each do |d|%>
-  <li><a href="/deck/#{d.id}"<%= d.name%>></a></li>
+  <li><a href="/deck/<%=d.id%>"</a><%= d.name%></li>
    <%end%>
 </ul>  
 
