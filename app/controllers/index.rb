@@ -11,19 +11,13 @@ get '/profile/:id' do
   erb :profile
 end
 
-get '/deck/:id' do
-  @deck = Deck.find(params[:id])
-  @card = @deck.cards.sample
-  # @user = User.find(session[:id])
-  # @round = Round.create(user_id: @user.id, deck_id: @deck.id)
-  erb :card
-end  
+ 
 
 get '/card' do
   @user = User.find(session[:id])
   @round = Round.find(session[:round])
   @deck_array = @round.deck_array 
-  "This is deck array: #{@deck_array}"
+  
     @int_cards = Guess.where(round_id: @round.id).map do |g|
       g.card_id
     end
@@ -63,22 +57,25 @@ post "/cardloop/:id" do
     # redirect '/card'    
 end  
 
-post "/round/card/:id" do
+post "/round/card" do
   @user= User.find(session[:id])
-  @card= Card.find(params[:id])
-  deck_id= @card.deck_id
+  p params
+ 
+  deck_id= params[:deck]
+  @deck =Deck.find(deck_id)
   @round = Round.create(user_id: @user.id,deck_id: deck_id)
   session[:round] = @round.id 
-  @round.deck_array
-    if params[:guess].downcase == @card.answer.downcase
-      Guess.create(round_id: @round.id, card_id: @card.id, correct: true)
-       @correctness = 'Correct!'    
-    else
-      Guess.create(round_id: @round.id, card_id: @card.id, correct: false)
-        @correctness = 'Wrong!'
-    end
+  @card = @deck.cards.sample
+  # @round.deck_array
+    # if params[:guess].downcase == @card.answer.downcase
+    #   Guess.create(round_id: @round.id, card_id: @card.id, correct: true)
+    #    @correctness = 'Correct!'    
+    # else
+    #   Guess.create(round_id: @round.id, card_id: @card.id, correct: false)
+    #     @correctness = 'Wrong!'
+    # end
   # redirect '/card'
-    erb :feedback
+   erb :new_card
 end
 
 post '/login' do
