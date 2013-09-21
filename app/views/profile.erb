@@ -1,10 +1,20 @@
 <div class="container">
-  <h1>Welcome<%=@user.name %>!</h1>
+  <h1>Welcome, <%=@user.name %>!</h1>
 <ul>
   <% @decks.each do |d|%>
-  <li><a href="/deck/<%=d.id%>"</a><%= d.name%></li>
+  <li><a href="/deck/<%=d.id%>"><%= d.name%></a></li>
    <%end%>
 </ul>  
+
+<form action="" method="POST">
+  <select>
+    <% @decks.each do |d|%>
+      <option value="<%= d.name%>"><%= d.name%></option>
+    <% end %>
+  </select>
+
+  <input type="submit" value="Go!">
+</form>
 
 
 
@@ -12,12 +22,14 @@
   <table>
     <th>Date</th>
     <th>Deck</th>
+    <th>Results</th>
     <th>Score</th>
     <%@rounds.each do |r|%>
     <tr>
-      <td><%=r.created_at%></td>
-      <td><%=r.deck_id%></td>
-      <td><%=((r.num_correct).to_f/(r.num_cards).to_f)*(100.0)%></td>
+      <td><%=r.created_at.strftime("%m-%d-%Y")%></td>
+      <td><%=Deck.find(r.deck_id).name%></td>
+      <td><%= (r.num_correct) %> out of <%= r.num_cards %></td>
+      <td><%=(((r.num_correct).to_f/(r.num_cards).to_f)*(100.0)).round(1)%>%</td>
     </tr>  
     <%end%>
   </table>  
