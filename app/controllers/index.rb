@@ -6,7 +6,7 @@ end
 
 get '/profile/:id' do
   @user=User.find(session[:id])
-  @rounds = @user.rounds
+  @rounds = @user.rounds.order("created_at DESC").limit(15)
   @decks = Deck.all
   erb :profile
 end
