@@ -11,6 +11,10 @@ get '/profile/:id' do
   erb :profile
 end
 
+# get '/feedback/:answer' do
+#   @last_answer = params[:answer]
+#   erb :feedback
+# end 
  
 
 get '/card' do
@@ -36,10 +40,6 @@ get '/card' do
     end
 end
 
-# get '/feedback/:answer' do
-#   @last_answer = params[:answer]
-#   erb :feedback
-# end 
 
 # POST ================================================
 post "/cardloop/:id" do
@@ -65,17 +65,7 @@ post "/round/card" do
   @deck =Deck.find(deck_id)
   @round = Round.create(user_id: @user.id,deck_id: deck_id)
   session[:round] = @round.id 
-  @card = @deck.cards.sample
-  # @round.deck_array
-    # if params[:guess].downcase == @card.answer.downcase
-    #   Guess.create(round_id: @round.id, card_id: @card.id, correct: true)
-    #    @correctness = 'Correct!'    
-    # else
-    #   Guess.create(round_id: @round.id, card_id: @card.id, correct: false)
-    #     @correctness = 'Wrong!'
-    # end
-  # redirect '/card'
-   erb :new_card
+  redirect '/card'
 end
 
 post '/login' do
