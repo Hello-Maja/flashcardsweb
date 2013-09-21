@@ -27,14 +27,18 @@ get '/card' do
   @round = Round.find(session[:round])
 
   @deck_array = @round.deck_array 
-  p "This is deck array: #{@deck_array}"
+   "This is deck array: #{@deck_array}"
 
   @int_cards = Guess.where(round_id: @round.id).map do |g|
     g.card_id
   end
 
-  @guess_card = int_card.each do |i|
-     
+
+
+  @guessed_cards = @int_cards.map do |i|
+    i.to_s
+  end  
+  
 
 
   p @guessed_cards
@@ -42,8 +46,8 @@ get '/card' do
   p "These are available cards: #{@available_cards}"
 
   if @available_cards.empty? 
-
-    redirect '/profile/#{session[:id]}'
+    @round.finish
+    redirect "/profile/#{session[:id]}"
   else
     @card = Card.find(@available_cards.sample)
     erb :new_card
