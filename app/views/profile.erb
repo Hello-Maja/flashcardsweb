@@ -1,21 +1,20 @@
 <div class="container">
   <h1>Welcome, <%=@user.name %>!</h1>
-<ul>
-  <% @decks.each do |d|%>
-  <li><a href="/deck/<%=d.id%>"><%= d.name%></a></li>
-   <%end%>
-</ul>  
+    <ul>
+      <% @decks.each do |d|%>
+      <li><a href="/deck/<%=d.id%>"><%= d.name%></a></li>
+       <%end%>
+    </ul>  
 
-<!-- INCORPORATE THIS DROPDOWN -->
-<form action="" method="POST">
-  <select>
-    <% @decks.each do |d|%>
-      <option value="<%= d.name%>"><%= d.name%></option>
-    <% end %>
-  </select>
-
-  <input type="submit" value="Go!">
-</form>
+  <!-- INCORPORATE THIS DROPDOWN -->
+  <form action="" method="POST">
+    <select>
+      <% @decks.each do |d|%>
+        <option value="<%= d.name%>"><%= d.name%></option>
+      <% end %>
+    </select>
+    <input type="submit" value="Go!">
+  </form>
 
   <table>
     <th>Date</th>

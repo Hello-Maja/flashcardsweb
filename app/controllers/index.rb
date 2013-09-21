@@ -42,10 +42,10 @@ get '/card' do
     end
 end
 
-get '/feedback/:answer' do
-  @last_answer = params[:answer]
-  erb :feedback
-end 
+# get '/feedback/:answer' do
+#   @last_answer = params[:answer]
+#   erb :feedback
+# end 
 
 # POST ================================================
 post "/cardloop/:id" do
@@ -53,10 +53,14 @@ post "/cardloop/:id" do
   @round =Round.find(session[:round])
     if params[:guess].downcase == @card.answer.downcase
       Guess.create(round_id: @round.id, card_id: @card.id, correct: true)
+      @correctness = 'Correct!'
+
     else
       Guess.create(round_id: @round.id, card_id: @card.id, correct: false)
+            @correctness = 'Wrong!'
     end
-    redirect '/card'    
+    erb :feedback
+    # redirect '/card'    
 end  
 
 post "/round/card/:id" do
@@ -68,11 +72,13 @@ post "/round/card/:id" do
   @round.deck_array
     if params[:guess].downcase == @card.answer.downcase
       Guess.create(round_id: @round.id, card_id: @card.id, correct: true)
+       @correctness = 'Correct!'    
     else
       Guess.create(round_id: @round.id, card_id: @card.id, correct: false)
+        @correctness = 'Wrong!'
     end
-  redirect '/card'
-  # redirect "/feedback/#{params[:guess]}"
+  # redirect '/card'
+    erb :feedback
 end
 
 post '/login' do
