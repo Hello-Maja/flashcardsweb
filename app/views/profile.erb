@@ -1,18 +1,14 @@
 <div class="container">
   <h1>Welcome, <%=@user.name %>!</h1>
-    <ul>
-      <% @decks.each do |d|%>
-      <li><a href="/deck/<%=d.id%>"><%= d.name%></a></li>
-       <%end%>
-    </ul>  
+
 
   <!-- INCORPORATE THIS DROPDOWN -->
-  <form action="" method="POST">
-    <select>
+  <form action="/round/card" method="POST">
+    
       <% @decks.each do |d|%>
-        <option value="<%= d.name%>"><%= d.name%></option>
+         <input type="radio" name="deck" value="<%=d.id%>"><%= d.name%><br>
       <% end %>
-    </select>
+    
     <input type="submit" value="Go!">
   </form>
 
