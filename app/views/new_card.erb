@@ -2,7 +2,7 @@
   <h1><%= @card.question%></h1> 
 
   <br>
-  <form id="answer" action="/cardloop/#{@card.id}" method="post">
+  <form id="answer" action="/cardloop/<%=@card.id%>" method="post">
      <label>Answer<input type="text" id="guess" name="guess"></label><br>
      <input type="submit" value="answer">
   </form>
