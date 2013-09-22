@@ -21,7 +21,8 @@ get '/card' do
   @user = User.find(session[:id])
   @round = Round.find(session[:round])
   @deck_array = @round.deck_array 
-  
+  p @user
+  p session
     @int_cards = Guess.where(round_id: @round.id).map do |g|
       g.card_id
     end
