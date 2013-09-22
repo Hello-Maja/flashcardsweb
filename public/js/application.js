@@ -1,7 +1,14 @@
 $(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
+  $('#card form').on('submit',function(event){
+    event.preventDefault();
+    $('#submit-answer').hide();
+    var user_entry = $('input').val();
+    var form_action = $('#hidden').html();
+    console.log(form_action);
+    $.post(form_action, {guess: user_entry}, function(result){
+      console.log(result);
+      $('#card').append(result);
 
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+   });
+  });
 });
