@@ -50,9 +50,11 @@ post "/cardloop/:id" do
 
     if params[:guess].downcase == @answer.downcase
       guess.correct = true
+      guess.save
       @correctness = 'Correct!'
     else
       guess.correct = false
+      guess.save
       @correctness = 'Wrong!'
     end
 
