@@ -1,4 +1,8 @@
 <div class="container" id="card">
+  <span id="progress">
+    <p>Learning: <%= @round.deck.name %></p> 
+    <p>Card <%= @guessed_cards.count + 1 %> of <%= @deck_array.count %></p>
+  </span>
   <h1><%= @card.question%></h1> 
   <br>
   <p id="hidden">/cardloop/<%=@card.id%></p>
