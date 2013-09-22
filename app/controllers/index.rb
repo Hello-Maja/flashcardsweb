@@ -46,7 +46,6 @@ end
 post "/cardloop/:id" do
 
   @card= Card.find(params[:id])
-  p session
   @round = Round.find(session[:round])
   @answer = @card.answer 
   guess = Guess.create(round_id: @round.id, card_id: @card.id)
