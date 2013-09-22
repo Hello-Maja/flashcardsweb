@@ -99,7 +99,3 @@ post '/signup' do
       redirect "/"  
     end
 end
-
-
-
-
