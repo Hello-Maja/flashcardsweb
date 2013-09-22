@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+  <link href='http://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
+
+  <link href='http://fonts.googleapis.com/css?family=Permanent+Marker|Gloria+Hallelujah' rel='stylesheet' type='text/css'>
+
   <!-- 
     normalize.css removes cross-browser differences in defaults, e.g.,
     differences in how form elements appear between Firefox and IE
@@ -14,10 +19,20 @@
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
+  <script src="/js/java2.js"></script>
+
 
   <title></title>
 </head>
+
 <body>
+  <%if session[:id] == nil%>
+    <%= erb :_navbar%> 
+  <%else%>
+    <%= erb :_logout%> 
+  <%end%>
+
   <%= yield %>
+  <%= erb :_footer%>
 </body>
 </html>

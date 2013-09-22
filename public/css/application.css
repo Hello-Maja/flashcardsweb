@@ -2,8 +2,142 @@
   margin: 20px auto;
   width: 600px;
   padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
+  margin-top:100px;
+  text-align: center
+
 }
+
+body {
+  font-family: Permanent Marker;
+}
+
+.container h1{
+  font-size: 45px;
+  font-family: Permanent Marker;
+  color: #6495ED;
+}
+
+input {
+ margin-left: 5px;
+ margin-bottom: 5px;
+
+}
+
+table {
+  margin: 0px auto; 
+  margin-top: 45px;
+  border: ;
+
+}
+
+table,th, td
+{
+border: 1px solid black;
+padding:15px;
+}
+
+#hidden {
+  visibility: hidden;
+  margin: 0px auto;
+}
+
 th {
   text-align: left;
+  font-family: Gloria Hallelujah;
+  color: #EB0A07;
+  font-size: 150%;
+  text-decoration: underline;
 }
+
+tr:nth-child(even){
+  background-color: #C0C0C0;
+}
+
+tr:nth-child(odd){
+  background-color: #DEFFFF;
+}
+
+td {
+  text-align: center;
+  padding:12px;
+}
+
+.hover {
+  font-style: italic;
+  font-weight: bolder;
+}
+
+.navbar {
+  height: 53px;
+  width: 100%;
+  line-height: 38px;
+  background-color: #C0C0C0;
+  position: fixed;
+  top: 0px;
+font-style: italic;
+font-weight: bolder;
+}
+
+.navbar h1{
+ color: #6495ED;
+ padding-left: 38px;
+ display: inline;
+ font-family: Permanent Marker;
+}  
+
+.footer h1{
+ color: #6495ED;
+ padding-left: 38px;
+ display: inline;
+ font-family: Permanent Marker;
+}  
+
+
+.footer{
+  width: 100%;
+  height: 53px;
+  position:fixed;
+  background-color: #C0C0C0;
+  bottom: 0px
+}
+
+.signup {
+  margin: 0px auto;
+  float:left;
+  padding:20px 20px 20px 20px;
+  width: 600px ;
+  border:none ;
+  border-radius:5px;
+  background-color: white
+}
+
+.login {
+  display: inline;
+  float:right;
+  margin-right: 40px;
+  margin-top: 2px;
+}
+
+.navbar h2{
+ color: #EB0A07;
+ padding-left: 38px;
+ display: inline;
+ margin-left: 695px;
+ font-family: Permanent Marker;
+} 
+
+.navbar h1 {
+font-family: Permanent Marker;
+display: inline;
+float:right;
+margin-right: 40px;
+margin-top: 2px;
+}
+
+.navbar h2{
+ color: #EB0A07;
+ padding-left: 38px;
+ display: inline;
+ margin-left: 695px;
+ font-family: Permanent Marker;
+} 
