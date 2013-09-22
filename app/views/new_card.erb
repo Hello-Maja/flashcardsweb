@@ -1,10 +1,15 @@
-<div class="container">
+<div class="container" id="card">
+  <span id="progress">
+    <p>Learning: <%= @round.deck.name %></p> 
+    <p>Card <%= @guessed_cards.count + 1 %> of <%= @deck_array.count %></p>
+  </span>
   <h1><%= @card.question%></h1> 
   <br>
+  <p id="hidden">/cardloop/<%=@card.id%></p>
   <form id="answer" action="/cardloop/<%=@card.id%>" method="post">
      <label>Answer<input type="text" id="guess" name="guess"></label>
      <br>
-     <input type="submit" value="answer">
+     <input id="submit-answer" type="submit" value="answer">
   </form>
   <br>
 </div>  

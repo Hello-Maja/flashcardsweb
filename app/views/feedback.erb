@@ -1,7 +1,7 @@
-<div class="container">
-  <!--  THIS VIEW IS JUST A PLACEHOLDER...
-        IT WORKS BUT IS NOT COMPLETE      -->
+<div class="container" id="feedback">
         <h1><%=@correctness%></h1>
-  <h3>You answered :<%= params[:guess] %></h3>
-  <a href='/card'>Next Question </a>
+  <h3>You answered: <%= params[:guess] %></h3>
+  <h3>The correct answer is: <%= @answer %>
+
+  <p><a href='/card'>Next Question</a></p>
 </div>
