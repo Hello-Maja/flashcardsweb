@@ -7,19 +7,34 @@
 
 }
 .container h1{
-  font-size: 45px
+  font-size: 45px;
+  font-family: Permanent Marker;
+  color: #6495ED;
 }
 
 table {
   margin: 0px auto; 
   margin-top: 45px;
+  border: ;
+
+}
+
+table,th, td
+{
+border: 1px solid black;
+padding:15px;
+}
+
+#hidden p {
+  display: none;
 
 }
 
 th {
   text-align: left;
-  font-family: le monde courrier;
-  font-size: 120%;
+  font-family: Gloria Hallelujah;
+  color: #EB0A07;
+  font-size: 150%;
   text-decoration: underline;
 }
 
@@ -28,26 +43,26 @@ tr:nth-child(even){
 }
 
 tr:nth-child(odd){
-  background-color: #6495ED;
+  background-color: #DEFFFF;
 }
 
-td{
+td {
   text-align: center;
   padding:12px;
 }
 
 .hover {
-font-style: italic;
-font-weight: bolder;
+  font-style: italic;
+  font-weight: bolder;
 }
 
 .navbar {
-height: 53px;
-width: 100%;
-line-height: 38px;
-background-color: #C0C0C0;
-position: fixed;
-top: 0px;
+  height: 53px;
+  width: 100%;
+  line-height: 38px;
+  background-color: #C0C0C0;
+  position: fixed;
+  top: 0px;
 }
 
 .navbar h1{
@@ -60,6 +75,7 @@ top: 0px;
  color: #6495ED;
  padding-left: 38px;
  display: inline;
+ font-family: Permanent Marker;
 }  
 
 
@@ -73,8 +89,6 @@ top: 0px;
 }
 
 
-
-
 .signup {
   margin: 0px auto;
   float:left;
@@ -86,15 +100,21 @@ top: 0px;
 }
 
 .login {
-display: inline;
-float:right;
-margin-right: 40px;
-margin-top: 2px;
+  display: inline;
+  float:right;
+  margin-right: 40px;
+  margin-top: 2px;
 }
 
 .navbar h2{
- color: #6495ED;
+ color: #EB0A07;
  padding-left: 38px;
  display: inline;
  margin-left: 695px;
+ font-family: Permanent Marker;
 } 
+
+.navbar h1 {
+  font-family: Permanent Marker;
+
+}
