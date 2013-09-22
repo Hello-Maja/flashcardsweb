@@ -21,7 +21,8 @@ get '/card' do
   @user = User.find(session[:id])
   @round = Round.find(session[:round])
   @deck_array = @round.deck_array 
-  
+  p @user
+  p session
     @int_cards = Guess.where(round_id: @round.id).map do |g|
       g.card_id
     end
@@ -40,20 +41,29 @@ get '/card' do
     end
 end
 
-
 # POST ================================================
 post "/cardloop/:id" do
-  @card= Card.find(params[:id])
-  @round =Round.find(session[:round])
-    if params[:guess].downcase == @card.answer.downcase
-      Guess.create(round_id: @round.id, card_id: @card.id, correct: true)
-      @correctness = 'Correct!'
 
+  @card= Card.find(params[:id])
+  @round = Round.find(session[:round])
+  @answer = @card.answer 
+  guess = Guess.create(round_id: @round.id, card_id: @card.id)
+
+    if params[:guess].downcase == @answer.downcase
+      guess.correct = true
+      guess.save
+      @correctness = 'Correct!'
     else
-      Guess.create(round_id: @round.id, card_id: @card.id, correct: false)
-            @correctness = 'Wrong!'
+      guess.correct = false
+      guess.save
+      @correctness = 'Wrong!'
     end
+
+  if request.xhr?
+    erb :feedback, layout: false
+  else
     erb :feedback
+  end
     # redirect '/card'    
 end  
 
