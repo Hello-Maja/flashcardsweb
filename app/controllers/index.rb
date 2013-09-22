@@ -6,6 +6,7 @@ end
 
 get '/profile/:id' do
   @user=User.find(session[:id])
+    p session
   @rounds = @user.rounds.order("created_at DESC").limit(15)
   @decks = Deck.all
   erb :profile
@@ -45,6 +46,7 @@ end
 post "/cardloop/:id" do
 
   @card= Card.find(params[:id])
+  p session
   @round = Round.find(session[:round])
   @answer = @card.answer 
   guess = Guess.create(round_id: @round.id, card_id: @card.id)
@@ -69,7 +71,8 @@ end
 
 post "/round/card" do
   @user= User.find(session[:id])
-  p params
+  p session
+   
  
   deck_id= params[:deck]
   @deck =Deck.find(deck_id)
@@ -80,7 +83,7 @@ end
 
 post '/login' do
   @user=User.find_by_email(params[:user][:email])
-  p @user.password
+  p session
   p params[:user][:password]
     if @user.password == params[:user][:password]
       session[:id]=@user.id
@@ -90,8 +93,14 @@ post '/login' do
     end  
 end  
 
+post '/logout' do
+  session.clear
+  redirect to '/'
+end
+
 post '/signup' do
   @user =User.create(params[:user])
+  p session
     if @user
       session[:id]= @user.id
       redirect "profile/#{session[:id]}"

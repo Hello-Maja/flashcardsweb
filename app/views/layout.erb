@@ -26,7 +26,12 @@
 </head>
 
 <body>
- <%= erb :_navbar%> 
+  <%if session[:id] == nil%>
+    <%= erb :_navbar%> 
+  <%else%>
+    <%= erb :_logout%> 
+  <%end%>
+
   <%= yield %>
   <%= erb :_footer%>
 </body>

@@ -6,29 +6,26 @@
   text-align: center
 
 }
+
+body {
+  font-family: Permanent Marker;
+}
+
 .container h1{
-<<<<<<< HEAD
-<<<<<<< HEAD
   font-size: 45px;
   font-family: Permanent Marker;
   color: #6495ED;
-=======
-  font-size: 45px
->>>>>>> resolved merge conflicts
-=======
-  font-size: 45px;
-  font-family: Permanent Marker;
-  color: #6495ED;
->>>>>>> trying to fix merge conflicts
+}
+
+input {
+ margin-left: 5px;
+ margin-bottom: 5px;
+
 }
 
 table {
   margin: 0px auto; 
   margin-top: 45px;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> trying to fix merge conflicts
   border: ;
 
 }
@@ -39,32 +36,16 @@ border: 1px solid black;
 padding:15px;
 }
 
-#hidden p {
-  display: none;
-<<<<<<< HEAD
-=======
->>>>>>> resolved merge conflicts
-=======
->>>>>>> trying to fix merge conflicts
-
+#hidden {
+  visibility: hidden;
+  margin: 0px auto;
 }
 
 th {
   text-align: left;
-<<<<<<< HEAD
-<<<<<<< HEAD
   font-family: Gloria Hallelujah;
   color: #EB0A07;
   font-size: 150%;
-=======
-  font-family: le monde courrier;
-  font-size: 120%;
->>>>>>> resolved merge conflicts
-=======
-  font-family: Gloria Hallelujah;
-  color: #EB0A07;
-  font-size: 150%;
->>>>>>> trying to fix merge conflicts
   text-decoration: underline;
 }
 
@@ -73,31 +54,15 @@ tr:nth-child(even){
 }
 
 tr:nth-child(odd){
-<<<<<<< HEAD
-<<<<<<< HEAD
   background-color: #DEFFFF;
 }
 
 td {
-=======
-  background-color: #6495ED;
-}
-
-td{
->>>>>>> resolved merge conflicts
-=======
-  background-color: #DEFFFF;
-}
-
-td {
->>>>>>> trying to fix merge conflicts
   text-align: center;
   padding:12px;
 }
 
 .hover {
-<<<<<<< HEAD
-<<<<<<< HEAD
   font-style: italic;
   font-weight: bolder;
 }
@@ -109,52 +74,22 @@ td {
   background-color: #C0C0C0;
   position: fixed;
   top: 0px;
-=======
 font-style: italic;
 font-weight: bolder;
-}
-
-.navbar {
-height: 53px;
-width: 100%;
-line-height: 38px;
-background-color: #C0C0C0;
-position: fixed;
-top: 0px;
->>>>>>> resolved merge conflicts
-=======
-  font-style: italic;
-  font-weight: bolder;
-}
-
-.navbar {
-  height: 53px;
-  width: 100%;
-  line-height: 38px;
-  background-color: #C0C0C0;
-  position: fixed;
-  top: 0px;
->>>>>>> trying to fix merge conflicts
 }
 
 .navbar h1{
  color: #6495ED;
  padding-left: 38px;
  display: inline;
+ font-family: Permanent Marker;
 }  
 
 .footer h1{
  color: #6495ED;
  padding-left: 38px;
  display: inline;
-<<<<<<< HEAD
-<<<<<<< HEAD
  font-family: Permanent Marker;
-=======
->>>>>>> resolved merge conflicts
-=======
- font-family: Permanent Marker;
->>>>>>> trying to fix merge conflicts
 }  
 
 
@@ -164,18 +99,8 @@ top: 0px;
   position:fixed;
   background-color: #C0C0C0;
   bottom: 0px
-
 }
 
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
-
->>>>>>> resolved merge conflicts
-=======
->>>>>>> trying to fix merge conflicts
 .signup {
   margin: 0px auto;
   float:left;
@@ -187,15 +112,10 @@ top: 0px;
 }
 
 .login {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> trying to fix merge conflicts
   display: inline;
   float:right;
   margin-right: 40px;
   margin-top: 2px;
-<<<<<<< HEAD
 }
 
 .navbar h2{
@@ -207,16 +127,11 @@ top: 0px;
 } 
 
 .navbar h1 {
-  font-family: Permanent Marker;
-
-=======
+font-family: Permanent Marker;
 display: inline;
 float:right;
 margin-right: 40px;
 margin-top: 2px;
->>>>>>> resolved merge conflicts
-=======
->>>>>>> trying to fix merge conflicts
 }
 
 .navbar h2{
@@ -226,8 +141,3 @@ margin-top: 2px;
  margin-left: 695px;
  font-family: Permanent Marker;
 } 
-
-.navbar h1 {
-  font-family: Permanent Marker;
-
-}
