@@ -2,15 +2,17 @@
   <h1>Welcome, <%=@user.name %>!</h1>
 
 
-  <!-- INCORPORATE THIS DROPDOWN -->
-  <form action="/round/card" method="POST">
-    
-      <% @decks.each do |d|%>
-         <input type="radio" name="deck" value="<%=d.id%>"><%= d.name%><br>
-      <% end %>
-    
-    <input type="submit" value="Go!">
-  </form>
+  <div class="start-game">
+    <h4>What do you want to study?<br>Pick a deck to start a game!</h4>
+    <form action="/round/card" method="POST">
+      
+        <% @decks.each do |d|%>
+           <input type="radio" name="deck" value="<%=d.id%>"> <%= d.name%><br>
+        <% end %>
+      
+      <input type="submit" value="Go!">
+    </form>
+  </div>
 
   <table>
     <table border="3">
