@@ -1,6 +1,6 @@
 # GET =================================================
 get '/' do
-  # Look in app/views/index.erb
+  @error = params[:error]
   erb :index
 end
 
@@ -88,7 +88,7 @@ post '/login' do
       redirect "/profile/#{session[:id]}"
     end
   else
-      redirect "/"  
+      redirect "/?error=true"  
   end  
 end  
 
