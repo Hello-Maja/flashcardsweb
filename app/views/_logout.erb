@@ -1,9 +1,11 @@
 <nav class="navbar">
-   <h1 class="studybuddy">StudyBuddy</h1>
-  <div class="logout">
-    <form id="logout" action="\logout" method="POST">
-      <input type="submit" value="logout">
-    </form>
-  </div> 
+	<h1 class="studybuddy">StudyBuddy</h1>
+	<div class="logout">
+	<FORM METHOD="POST" ACTION="\logout">
+		<input type="submit" value="logout">
+	</FORM>
+	<FORM METHOD="GET" ACTION="/profile/<%=:id%>">
+		<input type="submit" value="profile">
+	</FORM>
+	</div> 
 </nav>
-<!--  -->
