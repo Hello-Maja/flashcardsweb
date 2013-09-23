@@ -3,7 +3,9 @@
     <p>Learning: <%= @round.deck.name %></p> 
     <p>Card <%= @guessed_cards.count + 1 %> of <%= @deck_array.count %></p>
   </span>
+  <div><img src="<%=@card.image%>"></div>
   <h1><%= @card.question%></h1> 
+  <button type="button">Hint?</button>
   <br>
   <p id="hidden">/cardloop/<%=@card.id%></p>
   <form id="answer" action="/cardloop/<%=@card.id%>" method="post">

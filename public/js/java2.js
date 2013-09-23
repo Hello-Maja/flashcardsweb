@@ -4,6 +4,16 @@ $(document).ready( function(){
     $('.login').show();
     $(this).addClass('hover');
   });
+  $('img').hide();
+
+  $('button').on('click',function(){
+    $('button').remove();
+    $('img').slideDown(); 
+
+  });
+  $('#submit-answer').on('click',function(){
+    $('img').hide();
+  });
 
 
 }); 

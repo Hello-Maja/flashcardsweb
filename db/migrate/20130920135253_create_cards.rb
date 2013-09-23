@@ -4,6 +4,7 @@ class CreateCards < ActiveRecord::Migration
       t.string  :question
       t.string  :answer
       t.integer :deck_id
+      t.string  :image
       t.timestamps
     end
   end
