@@ -7,7 +7,7 @@
     <form action="/round/card" method="POST">
       
         <% @decks.each do |d|%>
-           <input type="radio" name="deck" value="<%=d.id%>"><%= d.name%><br>
+           <input type="radio" name="deck" value="<%=d.id%>"> <%= d.name%><br>
         <% end %>
       
       <input type="submit" value="Go!">
