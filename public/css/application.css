@@ -141,3 +141,16 @@ margin-top: 2px;
  margin-left: 695px;
  font-family: Permanent Marker;
 } 
+
+.start-game {
+  background-color: #FFC53D;
+  border-radius: 15px;
+  width: 60%;
+  margin: auto;
+}
+.start-game {
+
+}
+.start-game input {
+  border-radius: 5px;
+}
