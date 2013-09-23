@@ -9,6 +9,7 @@
 
 body {
   font-family: Permanent Marker;
+  background-image:url('http://fc01.deviantart.net/fs70/f/2011/365/7/1/note_book_paper_1_by_dianascreations-d4kud9r.jpg');
 }
 
 .container h1{
@@ -20,6 +21,13 @@ body {
 input {
  margin-left: 5px;
  margin-bottom: 5px;
+
+}
+
+.navbar input{
+  background-color: #FFFF00;
+  padding: 10px;
+  font-weight:bold;
 
 }
 
@@ -39,6 +47,10 @@ padding:15px;
 #hidden {
   visibility: hidden;
   margin: 0px auto;
+}
+
+form{
+  display: inline;
 }
 
 th {
