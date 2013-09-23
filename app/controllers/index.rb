@@ -1,6 +1,6 @@
 # GET =================================================
 get '/' do
-  # Look in app/views/index.erb
+  @error = params[:error]
   erb :index
 end
 
@@ -82,14 +82,14 @@ end
 
 post '/login' do
   @user=User.find_by_email(params[:user][:email])
-  p session
-  p params[:user][:password]
+  if @user 
     if @user.password == params[:user][:password]
       session[:id]=@user.id
       redirect "/profile/#{session[:id]}"
-    else
-      redirect "/"  
-    end  
+    end
+  else
+      redirect "/?error=true"  
+  end  
 end  
 
 post '/logout' do
