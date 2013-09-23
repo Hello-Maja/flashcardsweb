@@ -9,7 +9,7 @@
 
 body {
   font-family: Permanent Marker;
-  background-image:url('http://blog.stevendesigns.com/files/android-wallpapers/School-Paper_960x850.png');
+  background-image:url('http://fc01.deviantart.net/fs70/f/2011/365/7/1/note_book_paper_1_by_dianascreations-d4kud9r.jpg');
 }
 
 .container h1{
@@ -21,6 +21,13 @@ body {
 input {
  margin-left: 5px;
  margin-bottom: 5px;
+
+}
+
+.navbar input{
+  background-color: #FFFF00;
+  padding: 10px;
+  font-weight:bold;
 
 }
 
