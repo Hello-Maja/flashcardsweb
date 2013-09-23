@@ -82,8 +82,6 @@ end
 
 post '/login' do
   @user=User.find_by_email(params[:user][:email])
-  p session
-  p params[:user][:password]
     if @user.password == params[:user][:password]
       session[:id]=@user.id
       redirect "/profile/#{session[:id]}"
