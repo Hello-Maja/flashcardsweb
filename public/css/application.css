@@ -42,6 +42,10 @@ padding:15px;
   margin: 0px auto;
 }
 
+form{
+  display: inline;
+}
+
 th {
   text-align: left;
   font-family: Gloria Hallelujah;
